@@ -1,0 +1,26 @@
+{
+  "id":"FLOWS/util/tempfile",
+  "lambda":"lambda-arn",
+  "role":"iam-arn",
+  "output":{"schema":{
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "allocated tempfile",
+            "type": "object",
+            "properties": {
+              "targeturl": {"type": "string" },
+              "sourceurl": {"type": "string" }
+            },
+            "required": ["datetime","sourceurl"]
+        },
+        "examples":{
+          "result":{
+            "targeturl":"https://meshify-util-databucket-9e3xuu8kl7ee.s3.amazonaws.com/fb52dae3-82a3-4207-85fb-38caacb12c38?AWSAccessKeyId=ASIAIBYPRVK6CIEM7UNQ&Signature=Q3u5ZE9CmHHr4NsovFBspddPTW4%3D&content-type=application%2Foctet-stream&x-amz-security-token=FQoDYXdzEBYaDKDr69deNRPnVOP4yCKOAumqx2p5iLK6xA%2BN2bTK73bZyLMBJzr1%2F9jkgzG70lx9X8S33ZbXyEPYO0r72ch3L8wCJoee49T3orUGo8HkD7gYdQO%2FChJnvpwAXb8CifMbCZb3if6gepTcg%2FHEjV%2FMhWHmrE8qiOe5vPsLQ%2FeSz7qC6AIQX5RCR%2FW0EY0XloV3SP1K3QS%2FBIDRHRmZUZzRE1ZuV2pvwVM1wTEWETKc0%2F4TPqklUW93%2Fjb6jid7f6MuH2pYhVzSZmh%2BtNltoOWzJnDQhzVyMfdrAqeBvPByvlSrtSGWgQsr7IBohZ0AIFTghzKj1LzXX3emTpM5D4J%2FAhS48g9YoKKz1Swlms7S9QguKNTqveyVO3wWFqjsSCj7y6HXBQ%3D%3D&Expires=1525183501",
+            "sourceurl":"https://meshify-util-databucket-9e3xuu8kl7ee.s3.amazonaws.com/fb52dae3-82a3-4207-85fb-38caacb12c38?AWSAccessKeyId=ASIAIBYPRVK6CIEM7UNQ&Signature=Q3u5ZE9CmHHr4NsovFBspddPTW4%3D&content-type=application%2Foctet-stream&x-amz-security-token=FQoDYXdzEBYaDKDr69deNRPnVOP4yCKOAumqx2p5iLK6xA%2BN2bTK73bZyLMBJzr1%2F9jkgzG70lx9X8S33ZbXyEPYO0r72ch3L8wCJoee49T3orUGo8HkD7gYdQO%2FChJnvpwAXb8CifMbCZb3if6gepTcg%2FHEjV%2FMhWHmrE8qiOe5vPsLQ%2FeSz7qC6AIQX5RCR%2FW0EY0XloV3SP1K3QS%2FBIDRHRmZUZzRE1ZuV2pvwVM1wTEWETKc0%2F4TPqklUW93%2Fjb6jid7f6MuH2pYhVzSZmh%2BtNltoOWzJnDQhzVyMfdrAqeBvPByvlSrtSGWgQsr7IBohZ0AIFTghzKj1LzXX3emTpM5D4J%2FAhS48g9YoKKz1Swlms7S9QguKNTqveyVO3wWFqjsSCj7y6HXBQ%3D%3D&Expires=1525183501"
+          }
+        }
+      },
+  "type":"task",
+  "description":"creates a temporary file and provides access urls for PUT and GET operations",
+  "icon":"https://flows.app/favicon.png",
+  "billing":"standard"
+}

@@ -1,0 +1,39 @@
+{
+    "id": "FLOWS/util/string2json",
+    "lambda": "lambda-arn",
+    "role": "iam-arn",
+    "input": {
+        "schema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "input json string",
+            "type": "object",
+            "properties": {
+                "input": {
+                    "type": "string"
+                }
+            },
+            "required": ["input"]
+        },
+        "examples": {
+            "json1": {
+                "input": "{\"name\":\"value\"}"
+            }
+        }
+    },
+    "output": {
+        "schema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "parsed object",
+            "type": "object"
+        },
+        "examples": {
+            "result": {
+                "name": "value"
+            }
+        }
+    },
+    "type": "task",
+    "description": "converts a json string into an object",
+    "icon": "https://flows.app/favicon.png",
+    "billing": "standard"
+}

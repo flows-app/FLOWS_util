@@ -1,0 +1,49 @@
+{
+    "id": "FLOWS/util/timestamp2datetime",
+    "lambda": "lambda-arn",
+    "role": "iam-arn",
+    "input": {
+        "schema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "timestamp",
+            "type": "object",
+            "properties": {
+                "ts": {
+                    "type": ["number", "string"]
+                }
+            },
+            "required": ["ts"]
+        },
+        "examples": {
+            "TS_in_ms": {
+                "ts": 1524831658058
+            },
+            "TS_as_string": {
+                "ts": "1524831658058"
+            }
+        }
+    },
+    "output": {
+        "schema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "datetime",
+            "type": "object",
+            "properties": {
+                "datetime": {
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "required": ["datetime"]
+        },
+        "examples": {
+            "result": {
+                "datetime": "2018-05-01T00:00:00Z"
+            }
+        }
+    },
+    "type": "task",
+    "description": "convert a unix timestamp (seconds or milliseconds since 1970) into a ISO date time string",
+    "icon": "https://flows.app/favicon.png",
+    "billing": "standard"
+}

@@ -1,0 +1,36 @@
+{
+    "id": "FLOWS/util/dedup",
+    "lambda": "lambda-arn",
+    "role": "iam-arn",
+    "input": {
+        "schema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "any input",
+            "type": "object"
+        },
+        "examples": {
+            "TS_in_ms": {
+                "ts": 1524831658058
+            },
+            "TS_as_string": {
+                "ts": "1524831658058"
+            }
+        }
+    },
+    "output": {
+        "schema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "any output",
+            "type": "object"
+        },
+        "examples": {
+            "result": {
+                "datetime": "2018-05-01T00:00:00Z"
+            }
+        }
+    },
+    "type": "task",
+    "description": "takes any input and copy the content to the output. This leads to an implicit data deduplication",
+    "icon": "https://flows.app/favicon.png",
+    "billing": "standard"
+}

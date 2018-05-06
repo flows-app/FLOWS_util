@@ -1,0 +1,28 @@
+{
+    "id": "FLOWS/util/manualtrigger",
+    "lambda": "lambda-arn",
+    "role": "iam-arn",
+    "output": {
+        "schema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "datetime",
+            "type": "object",
+            "properties": {
+                "now": {
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "required": ["now"]
+        },
+        "examples": {
+            "result": {
+                "now": "2018-05-01T00:00:00Z"
+            }
+        }
+    },
+    "type": "event",
+    "description": "triggers through manual invocation",
+    "icon": "https://flows.app/favicon.png",
+    "billing": "standard"
+}

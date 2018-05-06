@@ -1,0 +1,40 @@
+{
+    "id": "FLOWS/util/json2string",
+    "lambda": "lambda-arn",
+    "role": "iam-arn",
+    "input": {
+        "schema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "any input",
+            "type": "object"
+        },
+        "examples": {
+            "TS_in_ms": {
+                "ts": 1524831658058
+            },
+            "TS_as_string": {
+                "ts": "1524831658058"
+            }
+        }
+    },
+    "output": {
+        "schema": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "datetime",
+            "type": "object",
+            "properties": {
+                "output": {
+                    "type": "string"
+                }
+            },
+            "required": ["output"]
+        },
+        "examples": {
+            "output": "{\"TS_in_ms\": {\"ts\": 1524831658058}"
+        }
+    },
+    "type": "task",
+    "description": "convert any json into a flat string",
+    "icon": "https://flows.app/favicon.png",
+    "billing": "standard"
+}
