@@ -3,7 +3,7 @@ import base64
 import os
 import json
 
-domain = "mx.meshify.io"
+domain = "mx.flows.app"
 mailgunUrl = "https://api.mailgun.net/v3/"+domain+"/messages"
 MailgunApiKey = os.environ.get("MailgunApiKey")
 
@@ -21,7 +21,7 @@ def handler(event, context):
 
     result = requests.post(mailgunUrl,
         auth=("api", MailgunApiKey),
-        data={"from": "🤖 - "+flowname+" <🤖@meshify.io>",
+        data={"from": "🤖 - "+flowname+" <bot@flows.app>",
               "to": [ target ],
               "subject": subject,
               "text": body

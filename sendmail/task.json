@@ -41,6 +41,7 @@
         }
     },
     "type": "task",
+    "label": "send mail",
     "description": "sends email notifications",
     "icon": "https://flows.app/favicon.png",
     "billing": "standard"
