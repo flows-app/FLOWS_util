@@ -5,13 +5,8 @@ exports.handler = (event, context,callback) => {
   console.log(JSON.stringify(event,null,2));
   console.log("context");
   console.log(JSON.stringify(context,null,2));
-  let ts = Number(event.ts);
-  //check if timestamp is seconds or milliseconds
-  if( ts < 1000000000000){
-    ts *= 1000;
-  }
-  let date = new Date(ts).toISOString();
-  let result={"datetime":date};
+  let date = new Date().toISOString();
+  let result={"today":date.substring(1,10)};
   console.log(JSON.stringify(result,null,2));
   callback(null,result);
 }

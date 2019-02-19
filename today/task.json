@@ -1,0 +1,16 @@
+{
+    "id": "FLOWS/util/today",
+    "lambda": "lambda-arn",
+    "role": "iam-arn",
+    "output": {
+        "examples": {
+            "result": {
+                "today": "2019-02-19"
+            }
+        }
+    },
+    "type": "task",
+    "description": "return the current day in ISO format (e.g. 2019-02-19)",
+    "icon": "https://flows.app/favicon.png",
+    "billing": "standard"
+}
