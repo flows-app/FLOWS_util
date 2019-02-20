@@ -84,6 +84,15 @@ Resources:
         Fn::GetAtt: [ LambdaRole , Arn ]
       Runtime: nodejs6.10
       Timeout: 300
+  todayFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code: today
+      Handler: index.handler
+      Role:
+        Fn::GetAtt: [ LambdaRole , Arn ]
+      Runtime: nodejs8.10
+      Timeout: 300
   tempfileLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
@@ -155,6 +164,15 @@ Resources:
           - ""
           - - "/aws/lambda/"
             - Ref: timestamp2datetimeFunction
+      RetentionInDays: 7
+  todayLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName:
+        Fn::Join:
+          - ""
+          - - "/aws/lambda/"
+            - Ref: todayFunction
       RetentionInDays: 7
   LambdaRole:
     Type: AWS::IAM::Role
@@ -285,5 +303,13 @@ Outputs:
       Fn::GetAtt: [ timestamp2datetimeFunction , Arn ]
   timestamp2datetimeRole:
     Description: 'timestamp2datetime'
+    Value:
+      Fn::GetAtt: [ InvokeRole , Arn ]
+  todayodayFunction:
+    Description: 'today'
+    Value:
+      Fn::GetAtt: [ todayFunction , Arn ]
+  todayRole:
+    Description: 'today'
     Value:
       Fn::GetAtt: [ InvokeRole , Arn ]
