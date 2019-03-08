@@ -194,7 +194,6 @@ Resources:
             Statement:
             - Effect: Allow
               Action:
-              - logs:CreateLogGroup
               - logs:CreateLogStream
               - logs:PutLogEvents
               Resource: arn:aws:logs:*:*:*
@@ -240,6 +239,7 @@ Resources:
               - Fn::GetAtt: [ sendmailFunction , Arn ]
               - Fn::GetAtt: [ manualtriggerFunction , Arn ]
               - Fn::GetAtt: [ timestamp2datetimeFunction , Arn ]
+              - Fn::GetAtt: [ todayFunction , Arn ]
 Outputs:
   TimerFunction:
     Description: 'timer'

@@ -3,29 +3,19 @@
     "lambda": "lambda-arn",
     "role": "iam-arn",
     "input": {
-        "schema": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "description": "any input",
-            "type": "object"
-        },
         "examples": {
-            "TS_in_ms": {
-                "ts": 1524831658058
-            },
-            "TS_as_string": {
-                "ts": "1524831658058"
+            "some_value": {
+                "abc": 1524831658058,
+                "xyz": "hello"
             }
         }
     },
     "output": {
-        "schema": {
-            "$schema": "http://json-schema.org/draft-07/schema#",
-            "description": "any output",
-            "type": "object"
-        },
         "examples": {
             "result": {
-                "datetime": "2018-05-01T00:00:00Z"
+                "abc": 1524831658058,
+                "xyz": "hello",
+                "dedupid":"{\"abc\":1524831658058,\"xyz\":\"hello\"}"
             }
         }
     },
