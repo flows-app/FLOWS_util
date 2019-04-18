@@ -24,7 +24,7 @@ Resources:
       Handler: index.handler
       Role:
         Fn::GetAtt: [ LambdaRole , Arn ]
-      Runtime: nodejs6.10
+      Runtime: nodejs8.10
       Timeout: 300
   dedupFunction:
     Type: AWS::Lambda::Function
@@ -33,7 +33,7 @@ Resources:
       Handler: index.handler
       Role:
         Fn::GetAtt: [ LambdaRole , Arn ]
-      Runtime: nodejs6.10
+      Runtime: nodejs8.10
       Timeout: 300
   json2stringFunction:
     Type: AWS::Lambda::Function
@@ -42,7 +42,7 @@ Resources:
       Handler: index.handler
       Role:
         Fn::GetAtt: [ LambdaRole , Arn ]
-      Runtime: nodejs6.10
+      Runtime: nodejs8.10
       Timeout: 300
   string2jsonFunction:
     Type: AWS::Lambda::Function
@@ -51,7 +51,7 @@ Resources:
       Handler: index.handler
       Role:
         Fn::GetAtt: [ LambdaRole , Arn ]
-      Runtime: nodejs6.10
+      Runtime: nodejs8.10
       Timeout: 300
   sendmailFunction:
     Type: AWS::Lambda::Function
@@ -73,7 +73,7 @@ Resources:
       Handler: index.handler
       Role:
         Fn::GetAtt: [ LambdaRole , Arn ]
-      Runtime: nodejs6.10
+      Runtime: nodejs8.10
       Timeout: 300
   timestamp2datetimeFunction:
     Type: AWS::Lambda::Function
@@ -82,7 +82,7 @@ Resources:
       Handler: index.handler
       Role:
         Fn::GetAtt: [ LambdaRole , Arn ]
-      Runtime: nodejs6.10
+      Runtime: nodejs8.10
       Timeout: 300
   todayFunction:
     Type: AWS::Lambda::Function
@@ -96,83 +96,47 @@ Resources:
   tempfileLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName:
-        Fn::Join:
-          - ""
-          - - "/aws/lambda/"
-            - Ref: tempfileFunction
+      LogGroupName: !Sub "/aws/lambda/${tempfileFunction}"
       RetentionInDays: 7
   TimerLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName:
-        Fn::Join:
-          - ""
-          - - "/aws/lambda/"
-            - Ref: TimerFunction
+      LogGroupName: !Sub "/aws/lambda/${TimerFunction}"
       RetentionInDays: 7
   dedupLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName:
-        Fn::Join:
-          - ""
-          - - "/aws/lambda/"
-            - Ref: dedupFunction
+      LogGroupName: !Sub "/aws/lambda/${dedupFunction}"
       RetentionInDays: 7
   json2stringLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName:
-        Fn::Join:
-          - ""
-          - - "/aws/lambda/"
-            - Ref: json2stringFunction
+      LogGroupName: !Sub "/aws/lambda/${json2stringFunction}"
       RetentionInDays: 7
   string2jsonLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName:
-        Fn::Join:
-          - ""
-          - - "/aws/lambda/"
-            - Ref: string2jsonFunction
+      LogGroupName: !Sub "/aws/lambda/${string2jsonFunction}"
       RetentionInDays: 7
   sendmailLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName:
-        Fn::Join:
-          - ""
-          - - "/aws/lambda/"
-            - Ref: sendmailFunction
+      LogGroupName: !Sub "/aws/lambda/${sendmailFunction}"
       RetentionInDays: 7
   manualtriggerLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName:
-        Fn::Join:
-          - ""
-          - - "/aws/lambda/"
-            - Ref: manualtriggerFunction
+      LogGroupName: !Sub "/aws/lambda/${manualtriggerFunction}"
       RetentionInDays: 7
   timestamp2datetimeLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName:
-        Fn::Join:
-          - ""
-          - - "/aws/lambda/"
-            - Ref: timestamp2datetimeFunction
+      LogGroupName: !Sub "/aws/lambda/${timestamp2datetimeFunction}"
       RetentionInDays: 7
   todayLogGroup:
     Type: AWS::Logs::LogGroup
     Properties:
-      LogGroupName:
-        Fn::Join:
-          - ""
-          - - "/aws/lambda/"
-            - Ref: todayFunction
+      LogGroupName: !Sub "/aws/lambda/${todayFunction}"
       RetentionInDays: 7
   LambdaRole:
     Type: AWS::IAM::Role
